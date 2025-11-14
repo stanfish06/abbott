@@ -1,0 +1,33 @@
+(AutomaticParameterEstimation "true")
+(AutomaticScalesEstimation "true")
+(CheckNumberOfSamples "true")
+(DefaultPixelValue 0.000000)
+(FinalBSplineInterpolationOrder 3.000000)
+
+// Multi-resolution for detecting overall shrinkage
+(NumberOfResolutions 4.000000)
+(FixedImagePyramid "FixedSmoothingImagePyramid")
+(MovingImagePyramid "MovingSmoothingImagePyramid")
+(ImagePyramidSchedule 8.0 8.0 4.0 4.0 4.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0)
+
+(ImageSampler "RandomCoordinate")
+(Interpolator "LinearInterpolator")
+
+// More iterations to find scaling
+(MaximumNumberOfIterations 5000.000000)
+(MaximumNumberOfSamplingAttempts 16.000000)
+
+(Metric "AdvancedMattesMutualInformation")
+(NewSamplesEveryIteration "true")
+(NumberOfSamplesForExactGradient 8192.000000)
+(NumberOfSpatialSamples 6000.000000)
+
+(Optimizer "AdaptiveStochasticGradientDescent")
+(Registration "MultiResolutionRegistration")
+(ResampleInterpolator "FinalBSplineInterpolator")
+(Resampler "DefaultResampler")
+(ResultImageFormat "nii")
+(Transform "SimilarityTransform")
+(AutomaticTransformInitializationMethod "CenterOfGravity")
+(WriteIterationInfo "false")
+(WriteResultImage "true")

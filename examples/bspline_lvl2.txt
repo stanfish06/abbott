@@ -1,0 +1,45 @@
+(AutomaticParameterEstimation "true")
+(CheckNumberOfSamples "true")
+(DefaultPixelValue 0.000000)
+(FinalBSplineInterpolationOrder 3.000000)
+
+// DECREASED: Finer grid = more local control (was 32.0)
+(FinalGridSpacingInPhysicalUnits 16.000000)
+
+// Keep 4 resolution levels
+(NumberOfResolutions 4.000000)
+(FixedImagePyramid "FixedSmoothingImagePyramid")
+(MovingImagePyramid "MovingSmoothingImagePyramid")
+(ImagePyramidSchedule 32 32 8 16 16 4 8.0 8.0 2.0 4.0 4.0 1.0)
+(GridSpacingSchedule 2.803221 1.988100 1.410000 1.000000)
+
+(ImageSampler "RandomCoordinate")
+(Interpolator "LinearInterpolator")
+
+// INCREASED: More iterations (was 256)
+(MaximumNumberOfIterations 256.000000)
+
+// DOUBLED: More sampling attempts
+(MaximumNumberOfSamplingAttempts 16.000000)
+
+// Multi-metric with regularization
+(Registration "MultiMetricMultiResolutionRegistration")
+(Metric "AdvancedMattesMutualInformation" "TransformBendingEnergyPenalty")
+(Metric0Weight 1.000000)
+
+// DECREASED: Less regularization = more deformation (was 100)
+(Metric1Weight 75)
+
+(NewSamplesEveryIteration "true")
+
+// DOUBLED: More samples
+(NumberOfSamplesForExactGradient 8192.000000)
+(NumberOfSpatialSamples 8192.000000)
+
+(Optimizer "AdaptiveStochasticGradientDescent")
+(ResampleInterpolator "FinalBSplineInterpolator")
+(Resampler "DefaultResampler")
+(ResultImageFormat "nii")
+(Transform "BSplineTransform")
+(WriteIterationInfo "false")
+(WriteResultImage "false")
